@@ -32,25 +32,25 @@ Xt = X(IDXt);
 Zt = Z(IDXt);
 
 % for i = 1 : size(Xb,1)
-%     figure(10),clf
-%         plot( X, Z, 'k.' )
-%         hold( 'on' )
-%         plot( Xb(i,:), Zb(i,:), 'ko' )
-%         plot( Xb(i,1), Zb(i,1), 'ro' )
-%         plot( xb(i), zb(i), 'bo' )
-%         hold( 'off' )
-%         axis( 'equal', 'tight', 'off' )
-%     drawnow,pause
+    % figure(10),clf
+        % plot( X, Z, 'k.' )
+        % hold( 'on' )
+        % plot( Xb(i,:), Zb(i,:), 'ko' )
+        % plot( Xb(i,1), Zb(i,1), 'ro' )
+        % plot( xb(i), zb(i), 'bo' )
+        % hold( 'off' )
+        % axis( 'equal', 'tight', 'off' )
+    % drawnow,pause
 % end
-% 
+
 % for i = 1 : size(Xt,1)
-%     figure(10),clf
-%         plot( X, Z, 'k.' )
-%         hold( 'on' )
-%         plot( Xt(i,:), Zt(i,:), 'ko' )
-%         plot( Xt(i,1), Zt(i,1), 'ro' )
-%         plot( xt(i), zt(i), 'bo' )
-%         hold( 'off' )
-%         axis( 'equal', 'tight', 'off' )
-%     drawnow,pause
+    % figure(10),clf
+        % plot( X, Z, 'k.' )
+        % hold( 'on' )
+        % plot( Xt(i,:), Zt(i,:), 'ko' )
+        % plot( Xt(i,1), Zt(i,1), 'ro' )
+        % plot( xt(i), zt(i), 'bo' )
+        % hold( 'off' )
+        % axis( 'equal', 'tight', 'off' )
+    % drawnow,pause
 % end
