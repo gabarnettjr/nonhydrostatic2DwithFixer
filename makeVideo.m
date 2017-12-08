@@ -1,6 +1,6 @@
 F = plottingFromSavedFiles;
 
-v = VideoWriter('./movies/doubleStraka12p5.avi');
+v = VideoWriter('./movies/bubbleTopoSmooth25.avi');
 v.FrameRate = 10;
 v.Quality = 100;
 

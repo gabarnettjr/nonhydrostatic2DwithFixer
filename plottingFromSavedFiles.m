@@ -3,7 +3,7 @@ function F = plottingFromSavedFiles
 clc
 
 %main parameters:
-testCase = 'bubble';
+testCase = 'bubbleTopoSmooth';
 rbfType = 'phs';
 useMassFixer = 0;
 nx = 200+1;
@@ -11,10 +11,10 @@ nz = 200+1;
 rbforder    = 5;                    %the rbf parameter
 polyorder   = 3;                    %for derivative approximations
 n           = 11;                   %single-layer stencil size
-sLayers     = 45/11;                %number of stencil layers
+sLayers     = 100/11;               %number of stencil layers
 K           = 2;                    %HV parameter
-gamma       = -2^-3;                %other HV parameter
-tPlot       = 0 : 20 : 1500;
+gamma       = -2^-4;                %other HV parameter
+tPlot       = 0 : 15 : 1500;
 
 [ a, b, c, d, topoFunc ] = getDomain( testCase );
 

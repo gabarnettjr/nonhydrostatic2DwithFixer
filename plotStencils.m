@@ -10,9 +10,9 @@ if seeStencils == 1
     
     tmp = xxc((n+1)/2:end-(n-1)/2,2:end-1);
     for i = 1 : length(tmp(:))
-        plot( XC(i,:), ZC(i,:), 'ko' )
+        plot( XC(i,:), ZC(i,:), 'ko', 'markerSize', 10, 'lineWidth', 1.5 )
         if simpleNeighbors == 1
-            plot( XC(i,1), ZC(i,1), 'ro' )
+            plot( XC(i,1), ZC(i,1), 'ro', 'markerSize', 10, 'lineWidth', 1.5 )
         else
             if sLayers == 3
                 plot( XC(i,n+1), ZC(i,n+1), 'ro' )
@@ -39,7 +39,7 @@ if seeStencils == 1
             end
         end
         drawnow,pause
-        plot( XC(i,:), ZC(i,:), 'wo' )
+        plot( XC(i,:), ZC(i,:), 'wo', 'markerSize', 10, 'lineWidth', 1.5 )
     end
     
 end

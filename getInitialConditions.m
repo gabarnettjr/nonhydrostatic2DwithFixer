@@ -5,8 +5,8 @@ Cv = 717;
 Rd = Cp - Cv;
 g = 9.81;
 
-if strcmp( testCase, 'straka' ) || strcmp( testCase, 'movingStraka' ) ...
-        || strcmp( testCase, 'strakaTopo' )
+if strcmp( testCase, 'straka' ) || strcmp( testCase, 'strakaTopo' ) ...
+        || strcmp( testCase, 'movingStraka' ) || strcmp( testCase, 'movingStrakaTopo' )
     
     thetaBar = 300 * ones(size(xxc));
     piBar = 1 - g ./ Cp ./ thetaBar .* zzc;
@@ -21,7 +21,7 @@ if strcmp( testCase, 'straka' ) || strcmp( testCase, 'movingStraka' ) ...
     thetaPrime0 = Tprime0 ./ piBar;
     
     pi0 = piBar(:);
-    if strcmp( testCase, 'movingStraka' )
+    if strcmp( testCase, 'movingStraka' ) || strcmp( testCase, 'movingStrakaTopo' )
         u0 = 20*ones( size(pi0) );
     else
         u0 = zeros( size(pi0) );
@@ -67,7 +67,8 @@ elseif strcmp( testCase, 'doubleStraka' ) || strcmp( testCase, 'doubleStrakaTopo
     
     mu = 75;
     
-elseif strcmp( testCase, 'bubble' ) || strcmp( testCase, 'bubbleSmooth' )
+elseif strcmp( testCase, 'bubbleTopo' ) || strcmp( testCase, 'bubbleTopoSmooth' ) ...
+        || strcmp( testCase, 'bubble' ) || strcmp( testCase, 'bubbleSmooth' )
     
     thetaBar = 300*ones(size(xxc));
     piBar = 1 - g ./ Cp ./ thetaBar .* zzc;
@@ -75,10 +76,10 @@ elseif strcmp( testCase, 'bubble' ) || strcmp( testCase, 'bubbleSmooth' )
     xc = 5000;
     zc = 3000;
     r = sqrt( (xxc-xc).^2 + (zzc-zc).^2 );
-    if strcmp( testCase, 'bubbleSmooth' )
+    if strcmp( testCase, 'bubbleTopoSmooth' ) || strcmp( testCase, 'bubbleSmooth' )
         k = 1/900;
         thetaPrime0 = 2 * exp(-(k*r).^2);
-    else
+    elseif strcmp( testCase, 'bubbleTopo' ) || strcmp( testCase, 'bubble' )
         ind = r < R;
         thetaPrime0 = zeros( size(r) );
         thetaPrime0(ind) = 2 * ( 1 - r(ind)./R );
@@ -107,7 +108,7 @@ elseif strcmp( testCase, 'mountainWaves' )
     
     mu = 0;
     
-elseif strcmp( testCase, 'igw' )
+elseif strcmp( testCase, 'igw' ) || strcmp( testCase, 'igwTopo' )
     
     N = .01;
     theta0 = 300;

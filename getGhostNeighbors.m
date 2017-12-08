@@ -32,15 +32,18 @@ Xt = X(IDXt);
 Zt = Z(IDXt);
 
 % for i = 1 : size(Xb,1)
-    % figure(10),clf
-        % plot( X, Z, 'k.' )
-        % hold( 'on' )
-        % plot( Xb(i,:), Zb(i,:), 'ko' )
-        % plot( Xb(i,1), Zb(i,1), 'ro' )
-        % plot( xb(i), zb(i), 'bo' )
-        % hold( 'off' )
-        % axis( 'equal', 'tight', 'off' )
-    % drawnow,pause
+    % % figure(10),clf
+        % % plot( X, Z, 'k.' )
+        % % hold( 'on' )
+        % plot( Xb(i,:), Zb(i,:), 'ko', 'markerSize', 10, 'lineWidth', 1.5 )
+        % plot( Xb(i,1), Zb(i,1), 'ro', 'markerSize', 10, 'lineWidth', 1.5 )
+        % plot( xb(i), zb(i), 'bo', 'markerSize', 10, 'lineWidth', 1.5 )
+        % % hold( 'off' )
+        % % axis( 'equal', 'tight', 'off' )
+        % drawnow,pause
+        % plot( Xb(i,:), Zb(i,:), 'wo', 'markerSize', 10, 'lineWidth', 1.5 )
+        % plot( Xb(i,1), Zb(i,1), 'wo', 'markerSize', 10, 'lineWidth', 1.5 )
+        % plot( xb(i), zb(i), 'wo', 'markerSize', 10, 'lineWidth', 1.5 )
 % end
 
 % for i = 1 : size(Xt,1)

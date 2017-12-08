@@ -3,20 +3,20 @@ function nonhydrostatic2DwithFixer
 clc
 
 %main parameters:
-testCase = 'bubble';
+testCase = 'bubbleTopoSmooth';
 rbfType = 'phs';
 useMassFixer = 0;
-nx = 400+1;
-nz = 400+1;
+nx = 200+1;
+nz = 200+1;
 rbforder    = 5;                    %the rbf parameter
 polyorder   = 3;                    %for derivative approximations
 n           = 11;                   %single-layer stencil size
-sLayers     = 45/11;                %number of stencil layers
+sLayers     = 100/11;               %number of stencil layers
 K           = 2;                    %HV parameter
 gamma       = -2^-3;                %other HV parameter
-tPlot       = 0 : 20 : 1500;
+tPlot       = 0 : 15 : 1500;
 
-dt = 1/20;
+dt = 1/10;
 rkStages = 3;
 simpleNeighbors = 1;      %if 1, just get neighbors instead of using layers
 adamsBashforth = 0;

@@ -11,13 +11,16 @@ if strcmp( testCase, 'straka' ) || strcmp( testCase, 'strakaTopo' )
 %         topoFunc = @(x)  1000 * exp( -(32*(x-3200)/(b-a)).^2 );
         topoFunc = @(x)  500 * ( 1 - sin(2*pi*x./12800) );
     end
-elseif strcmp( testCase, 'movingStraka' )
+elseif strcmp( testCase, 'movingStraka' ) || strcmp( testCase, 'movingStrakaTopo' )
     a = -18000;
     b = 18000;
     c = 0;
     d = 6400;
-%     topoFunc = @(x)  000 * exp( -(32*(x+000)/(b-a)).^2 );
-    topoFunc = @(x)  500 * ( 1 - sin(2*pi*x./9000) );
+    if strcmp( testCase, 'movingStraka' )
+        topoFunc = @(x)  000 * exp( -(32*(x+000)/(b-a)).^2 );
+    elseif strcmp( testCase, 'movingStrakaTopo' )
+        topoFunc = @(x)  500 * ( 1 - sin(2*pi*x./9000) );
+    end
 elseif strcmp( testCase, 'doubleStraka' ) || strcmp( testCase, 'doubleStrakaTopo' ) ...
         || strcmp( testCase, 'doubleStrakaSmooth' ) || strcmp( testCase, 'doubleStrakaTopoSmooth' )
     a = -6400;
@@ -29,25 +32,35 @@ elseif strcmp( testCase, 'doubleStraka' ) || strcmp( testCase, 'doubleStrakaTopo
     elseif strcmp( testCase, 'doubleStrakaTopo' ) || strcmp( testCase, 'doubleStrakaTopoSmooth' )
         topoFunc = @(x)  1000 * exp( -(16*(x-1000)/(b-a)).^2 );
     end
-elseif strcmp( testCase, 'bubble' ) || strcmp( testCase, 'bubbleSmooth' )
+elseif strcmp( testCase, 'bubbleTopo' ) || strcmp( testCase, 'bubbleTopoSmooth' ) ...
+        || strcmp( testCase, 'bubble' ) || strcmp( testCase, 'bubbleSmooth' )
     a = 0;
     b = 10000;
     c = 0;
     d = 10000;
-%     topoFunc = @(x)  000 * exp( -(8*(x-6000)/(b-a)).^2 );
-    topoFunc = @(x)  500 * ( 1 + sin(2*pi*x./5000) );
+    if strcmp( testCase, 'bubbleTopo' ) || strcmp( testCase, 'bubbleTopoSmooth' )
+    %     topoFunc = @(x)  000 * exp( -(8*(x-6000)/(b-a)).^2 );
+        topoFunc = @(x)  500 * ( 1 + sin(2*pi*x./5000) );
+    else
+        topoFunc = @(x)  zeros(size(x));
+    end
 elseif strcmp( testCase, 'mountainWaves' )
     a = 0;
     b = 10000;
     c = 0;
     d = 10000;
     topoFunc = @(x)  500 * exp( -(16*(x-5000)/(b-a)).^2 );
-elseif strcmp( testCase, 'igw' )
+elseif strcmp( testCase, 'igw' ) || strcmp( testCase, 'igwTopo' )
     a = 0;
     b = 300000;
     c = 0;
     d = 10000;
-    topoFunc = @(x)  zeros(size(x));
+    if strcmp( testCase, 'igwTopo' )
+        topoFunc = @(x)  1000 * exp( -(16*(x-150000)/(b-a)).^2 );
+        % topoFunc = @(x)  500 * ( 1 + sin(2*pi*x./50000) );
+    elseif strcmp( testCase, 'igw' )
+        topoFunc = @(x)  zeros(size(x));
+    end
 elseif strcmp( testCase, 'schar' )
     a = -25000;
     b = 25000;
